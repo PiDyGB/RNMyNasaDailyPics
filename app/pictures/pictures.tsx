@@ -36,7 +36,6 @@ function Pictures() {
 
   return (
     <View style={backgroundStyle.container}>
-      <StatusBar />
       <FlatList data={data} keyExtractor={item => item.date} renderItem={renderItem}></FlatList>
     </View>
   )
@@ -53,7 +52,7 @@ export default function PicturesScreen() {
         backgroundColor: backgroundStyle.container.backgroundColor
       }
     }}>
-      <Stack.Screen name='Pictures' component={Pictures} />
+      <Stack.Screen name='PicturesScreen' component={Pictures} />
       <Stack.Screen name='Picture' component={PictureScreen} />
     </Stack.Navigator>
   );

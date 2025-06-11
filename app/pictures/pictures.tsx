@@ -37,7 +37,7 @@ function Pictures() {
   return (
     <View style={backgroundStyle.container}>
       <StatusBar />
-      <FlatList data={data} keyExtractor={item => item.url} renderItem={renderItem}></FlatList>
+      <FlatList data={data} keyExtractor={item => item.date} renderItem={renderItem}></FlatList>
     </View>
   )
 }

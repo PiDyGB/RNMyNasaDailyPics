@@ -7,7 +7,7 @@ const Tab = createBottomTabNavigator();
 export default function RootStack() {
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Pictures" component={PicturesScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="PicturesStack" component={PicturesScreen} options={{ headerShown: false }} />
             <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />
         </Tab.Navigator>
     );

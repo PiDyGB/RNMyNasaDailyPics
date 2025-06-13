@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, TouchableNativeFeedback, View } from "react-native"
-import { ApodEntry } from "../data/apod.types"
+import { ApodEntry } from "../../data/apod.types"
 
 
 type Props = {

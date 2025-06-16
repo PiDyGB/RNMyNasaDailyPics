@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, TouchableNativeFeedback, View } from "react-native"
 import { ApodEntry } from "../../data/apod.types"
+import { secondaryText } from "../../theme/styles"
 
 
 type Props = {
@@ -12,8 +13,8 @@ export function ApodItem({ item, onPress }: Props) {
         <TouchableNativeFeedback onPress={() => onPress(item)}>
             <View style={styles.container}>
                 <View style={styles.textContainer}>
-                    <Text style={{ color: 'white' }}>{item.title}</Text>
-                    <Text style={{ color: 'white' }}>{item.date}</Text>
+                    <Text style={{ color: 'white', paddingBottom: 4 }}>{item.title}</Text>
+                    <Text style={{ color: secondaryText }}>{item.date}</Text>
                 </View>
                 <Image style={styles.image} source={{ uri: item.url }}></Image>
             </View>

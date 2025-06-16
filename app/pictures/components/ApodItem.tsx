@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableNativeFeedback, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableNativeFeedback, useWindowDimensions, View } from "react-native"
 import { ApodEntry } from "../../data/apod.types"
 import { secondaryText } from "../../theme/styles"
 
@@ -9,6 +9,8 @@ type Props = {
 }
 
 export function ApodItem({ item, onPress }: Props) {
+    const { width, height } = useWindowDimensions()
+    const isPortrait = width < height
     return (
         <TouchableNativeFeedback onPress={() => onPress(item)}>
             <View style={styles.container}>
@@ -16,7 +18,7 @@ export function ApodItem({ item, onPress }: Props) {
                     <Text style={{ color: 'white', paddingBottom: 4 }}>{item.title}</Text>
                     <Text style={{ color: secondaryText }}>{item.date}</Text>
                 </View>
-                <Image style={styles.image} source={{ uri: item.url }}></Image>
+                <Image style={(isPortrait) ? styles.imagePortrait : styles.imageLandscape} source={{ uri: item.url }}></Image>
             </View>
         </TouchableNativeFeedback >
     )
@@ -31,8 +33,12 @@ const styles = StyleSheet.create({
         flex: 1,
         marginRight: 16,
     },
-    image: {
-        width: '33%',
+    imagePortrait: {
+        width: '30%',
+        aspectRatio: 16 / 9
+    },
+    imageLandscape: {
+        width: '15%',
         aspectRatio: 16 / 9
     }
 })

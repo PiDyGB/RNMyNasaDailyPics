@@ -24,7 +24,7 @@ export default function PicturesStack() {
             <Stack.Screen name="PicturesScreen" options={{
                 title: "NASA Daily Pics"
             }} component={PicturesScreen} />
-            <Stack.Screen name="PictureScreen" options={{ title: undefined }} component={PictureScreen} />
+            <Stack.Screen name="PictureScreen" options={({ route }) => ({ title: route.params?.apod?.title })} component={PictureScreen} />
         </Stack.Navigator>
     );
 }

@@ -18,7 +18,7 @@ export function ApodItem({ item, onPress }: Props) {
                     <Text style={{ color: 'white', paddingBottom: 4 }}>{item.title}</Text>
                     <Text style={{ color: secondaryText }}>{item.date}</Text>
                 </View>
-                <Image style={(isPortrait) ? styles.imagePortrait : styles.imageLandscape} source={{ uri: item.url }}></Image>
+                <Image testID="apod-image" style={(isPortrait) ? styles.imagePortrait : styles.imageLandscape} source={{ uri: item.url }}></Image>
             </View>
         </TouchableNativeFeedback >
     )
